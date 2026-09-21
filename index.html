@@ -996,6 +996,336 @@
     nav { display: none !important; }
   }
 
+  /* ─── CURRÍCULO PEDAGÓGICO ─── */
+  #curriculo { background: var(--black); }
+
+  .curr-intro-text {
+    font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+    line-height: 1.8;
+    opacity: 0.82;
+    max-width: 680px;
+    margin-bottom: 16px;
+  }
+
+  /* jornada label */
+  .curr-jornada-label {
+    margin: 56px 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .curr-jornada-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .curr-jornada-pill {
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    color: var(--gold);
+    border: 1px solid var(--gold-dim);
+    padding: 6px 16px;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+
+  /* módulo base */
+  .curr-modulo {
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+    background: var(--mid);
+  }
+  .curr-modulo-welcome { border-top: 3px solid var(--gold-dim); }
+  .curr-modulo-live { border-color: var(--gold); background: rgba(200,130,10,0.04); }
+  .curr-modulo-conclusao { border-top: 3px solid var(--gold); }
+
+  .curr-modulo-header {
+    padding: 36px 40px 32px;
+    border-bottom: 1px solid var(--border);
+  }
+  .curr-modulo-tag {
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .curr-modulo-tag-live { color: var(--gold); }
+  .curr-modulo-titulo {
+    font-size: clamp(1.4rem, 2.8vw, 2rem);
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 14px;
+    line-height: 1.15;
+  }
+  .curr-modulo-desc {
+    font-size: 0.95rem;
+    opacity: 0.78;
+    line-height: 1.75;
+    max-width: 700px;
+    color: var(--cream);
+  }
+
+  /* aulas */
+  .curr-aulas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+  .curr-aulas-grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .curr-aula {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    padding: 28px 32px;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s;
+  }
+  .curr-aula:hover { background: rgba(200,130,10,0.04); }
+  .curr-aula:last-child { border-right: none; }
+  .curr-aula-num {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 40px;
+    opacity: 0.4;
+  }
+  .curr-aula-body strong {
+    display: block;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 8px;
+    line-height: 1.35;
+    font-family: 'Inter', sans-serif;
+  }
+  .curr-aula-body p {
+    font-size: 0.85rem;
+    opacity: 0.65;
+    line-height: 1.65;
+    color: var(--cream);
+  }
+
+  /* lives stats */
+  .curr-live-stats {
+    display: flex;
+    align-items: stretch;
+  }
+  .curr-live-stat {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    padding: 40px 44px;
+    flex: 1;
+  }
+  .curr-live-stat-div {
+    width: 1px;
+    background: rgba(200,130,10,0.25);
+    flex-shrink: 0;
+  }
+  .curr-live-stat-num {
+    font-size: 4rem;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .curr-live-stat-text strong {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 10px;
+    margin-top: 8px;
+    font-family: 'Inter', sans-serif;
+  }
+  .curr-live-stat-text p {
+    font-size: 0.88rem;
+    opacity: 0.7;
+    line-height: 1.7;
+    color: var(--cream);
+  }
+
+  /* entregáveis */
+  .curr-entregaveis-section {
+    margin-top: 72px;
+    padding: 56px 0 0;
+    border-top: 1px solid var(--border);
+  }
+  .curr-entregaveis-header {
+    margin-bottom: 48px;
+  }
+  .curr-entregaveis-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+  .curr-entregavel-card {
+    background: var(--mid);
+    border: 1px solid var(--border);
+    padding: 36px 32px;
+    position: relative;
+    transition: border-color 0.25s, background 0.25s;
+  }
+  .curr-entregavel-card:hover {
+    border-color: rgba(200,130,10,0.5);
+    background: rgba(200,130,10,0.04);
+  }
+  .curr-entregavel-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+  .curr-entregavel-card:hover::before { opacity: 1; }
+  .curr-entregavel-icon {
+    font-size: 1.3rem;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: block;
+    line-height: 1;
+  }
+  .curr-entregavel-card strong {
+    display: block;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 12px;
+    line-height: 1.35;
+    font-family: 'Inter', sans-serif;
+  }
+  .curr-entregavel-card p {
+    font-size: 0.85rem;
+    opacity: 0.65;
+    line-height: 1.65;
+    color: var(--cream);
+  }
+
+  /* CTA final */
+  .curr-cta {
+    margin-top: 72px;
+    border: 1px solid var(--gold);
+    border-radius: 2px;
+    background: rgba(200,130,10,0.04);
+    overflow: hidden;
+    position: relative;
+  }
+  .curr-cta::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-lt), transparent);
+  }
+  .curr-cta-inner {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    align-items: center;
+    gap: 0;
+  }
+  .curr-cta-text {
+    padding: 52px 52px 52px 48px;
+    border-right: 1px solid rgba(200,130,10,0.25);
+  }
+  .curr-cta-box {
+    padding: 44px 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .curr-cta-preco-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gray);
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 10px;
+  }
+  .curr-cta-preco {
+    font-size: 2.6rem;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  .curr-cta-ou {
+    font-size: 0.75rem;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
+  }
+  .curr-cta-preco-parcelado {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--cream);
+    opacity: 0.75;
+    margin-bottom: 28px;
+    line-height: 1;
+  }
+  .curr-cta-preco-parcelado span {
+    font-size: 0.9rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: var(--gray);
+  }
+  .curr-cta-btn {
+    background: var(--gold);
+    color: var(--black);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-family: 'Inter', sans-serif;
+    padding: 16px 32px;
+    border-radius: 2px;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 14px;
+    transition: background 0.2s;
+  }
+  .curr-cta-btn:hover { background: var(--gold-lt); }
+  .curr-cta-note {
+    font-size: 0.72rem;
+    color: var(--gray);
+    text-align: center;
+    line-height: 1.5;
+    opacity: 0.8;
+  }
+
+  @media (max-width: 900px) {
+    .curr-aulas-grid-2 { grid-template-columns: 1fr; }
+    .curr-entregaveis-grid { grid-template-columns: 1fr 1fr; }
+    .curr-cta-inner { grid-template-columns: 1fr; }
+    .curr-cta-text { border-right: none; border-bottom: 1px solid rgba(200,130,10,0.25); padding: 40px 32px; }
+    .curr-live-stats { flex-direction: column; }
+    .curr-live-stat-div { width: 100%; height: 1px; }
+  }
+  @media (max-width: 600px) {
+    .curr-aulas-grid { grid-template-columns: 1fr; }
+    .curr-aula { border-right: none; }
+    .curr-entregaveis-grid { grid-template-columns: 1fr; }
+    .curr-modulo-header { padding: 28px 24px 24px; }
+    .curr-aula { padding: 24px 20px; }
+  }
+
   /* scroll reveal */
   [data-reveal] {
     opacity: 0;
@@ -1020,6 +1350,7 @@
       <li><a href="#posicionamento">Posicionamento</a></li>
       <li><a href="#esteira">Produtos</a></li>
       <li><a href="#formato">Funil</a></li>
+      <li><a href="#curriculo">Conteúdo</a></li>
       <li><a href="#proximos">Próximos Passos</a></li>
     </ul>
   </div>
@@ -1613,6 +1944,278 @@
     </div>
   </div>
 </section>
+
+<!-- CURRÍCULO PEDAGÓGICO -->
+<section id="curriculo" class="section">
+  <div class="container">
+
+    <!-- HEADER DA SEÇÃO -->
+    <div class="curr-header" data-reveal>
+      <div class="eyebrow section-eyebrow">O que você vai aprender</div>
+      <h2 class="section-title serif">Do zero ao primeiro processo.<br><em>Com segurança.</em></h2>
+      <div class="rule"></div>
+      <p class="curr-intro-text">A mentoria foi estruturada para funcionar de verdade na prática. Não é um curso de faculdade com conteúdo teórico que você nunca vai usar. É o que a Letícia aprendeu em 6 anos atendendo mais de 2 mil motoristas, colocado em ordem para você conseguir aplicar o mais rápido possível.</p>
+      <p class="curr-intro-text">Os módulos gravados entregam a base que não muda. As lives resolvem o que você não consegue sozinho no caso real que está na sua frente agora.</p>
+    </div>
+
+    <!-- BOAS-VINDAS -->
+    <div class="curr-jornada-label" data-reveal>
+      <span class="curr-jornada-pill">Quando você acabar de comprar</span>
+    </div>
+
+    <div class="curr-modulo curr-modulo-welcome" data-reveal>
+      <div class="curr-modulo-header">
+        <div class="curr-modulo-tag">Gravado · Assista no primeiro dia</div>
+        <h3 class="curr-modulo-titulo serif">Boas-vindas e orientações</h3>
+        <p class="curr-modulo-desc">Antes de entrar em qualquer conteúdo técnico, você precisa entender como a mentoria funciona, o que esperar de cada etapa e como aproveitar ao máximo o tempo que você tem de acesso. Começa aqui.</p>
+      </div>
+      <div class="curr-aulas-grid curr-aulas-grid-2">
+        <div class="curr-aula">
+          <span class="curr-aula-num serif">01</span>
+          <div class="curr-aula-body">
+            <strong>Bem-vindo à mentoria</strong>
+            <p>Uma mensagem da Letícia explicando o que construiu nessa mentoria e por que fez assim. De onde vem o conteúdo, o que você pode esperar das aulas e o que ela espera de você.</p>
+          </div>
+        </div>
+        <div class="curr-aula">
+          <span class="curr-aula-num serif">02</span>
+          <div class="curr-aula-body">
+            <strong>Como usar a mentoria do jeito certo</strong>
+            <p>A sequência de consumo, como se preparar para as lives, o que trazer nas sessões ao vivo e como acompanhar sua evolução ao longo dos 6 meses.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MÓDULO 0 -->
+    <div class="curr-jornada-label" data-reveal>
+      <span class="curr-jornada-pill">Nas primeiras semanas</span>
+    </div>
+
+    <div class="curr-modulo" data-reveal>
+      <div class="curr-modulo-header">
+        <div class="curr-modulo-tag">Gravado · Antes de qualquer outra coisa</div>
+        <h3 class="curr-modulo-titulo serif">Módulo 0: Fundamentos do Transporte</h3>
+        <p class="curr-modulo-desc">Esse módulo existe porque a maioria dos advogados que entra nessa área erra no básico: não sabe quem é quem no transporte, não sabe ler os documentos, não sabe quem tem legitimidade para processar. Sem essa base, qualquer coisa que vier depois fica frágil. Aqui você constrói o chão.</p>
+      </div>
+      <div class="curr-aulas-grid">
+        <div class="curr-aula">
+          <span class="curr-aula-num serif">03</span>
+          <div class="curr-aula-body">
+            <strong>O ecossistema do transporte rodoviário</strong>
+            <p>Embarcador, transportadora logística, destinatária e caminhoneiro. Por que cada um importa na hora de processar. TAC, ETC e TAC equiparado na prática.</p>
+          </div>
+        </div>
+        <div class="curr-aula">
+          <span class="curr-aula-num serif">04</span>
+          <div class="curr-aula-body">
+            <strong>Os documentos que sustentam tudo</strong>
+            <p>CT-e, Manifesto e Nota Fiscal: o que olhar, onde ficam as armadilhas, o que as empresas preenchem errado de propósito. Consulta pública RNTRC na prática.</p>
+          </div>
+        </div>
+        <div class="curr-aula">
+          <span class="curr-aula-num serif">05</span>
+          <div class="curr-aula-body">
+            <strong>Legitimidade e competência</strong>
+            <p>Quem pode processar quem. O contrato de arrendamento como solução para o caminhão que não está no nome. Juizado Especial vs. Vara Cível. Como escolher o fórum e por que Goiás e Mato Grosso pedem atenção especial.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MÓDULO 1 -->
+    <div class="curr-modulo" data-reveal>
+      <div class="curr-modulo-header">
+        <div class="curr-modulo-tag">Gravado · O núcleo da mentoria</div>
+        <h3 class="curr-modulo-titulo serif">Módulo 1: Direito Material da Estadia</h3>
+        <p class="curr-modulo-desc">É aqui que está o dinheiro. Esse é o direito mais cobrado, mais recorrente e que o Letícia tem mais profundidade de todos. Você vai aprender a diferença entre estadia no carregamento e na descarga, o que prova, o que destrói, como calcular e contra quem entrar. Não tem atalho nessa parte.</p>
+      </div>
+      <div class="curr-aulas-grid">
+        <div class="curr-aula">
+          <span class="curr-aula-num serif">06</span>
+          <div class="curr-aula-body">
+            <strong>O que é o direito da estadia</strong>
+            <p>Lei 11.442/2007, o que diz o artigo e o que significa na prática. As 5 horas de tolerância, como o cálculo retroage desde a chegada e como o valor é atualizado todo ano pela ANTT.</p>
+          </div>
+        </div>
+        <div class="curr-aula">
+          <span class="curr-aula-num serif">07</span>
+          <div class="curr-aula-body">
+            <strong>Estadia no carregamento</strong>
+            <p>Linha do tempo completa do carregamento. Ordem de carregamento, ticket de pesagem, rastreador. O que prova a chegada, o que prova a saída e os erros que destroem o caso antes mesmo de protocolar.</p>
+          </div>
+        </div>
+        <div class="curr-aula">
+          <span class="curr-aula-num serif">08</span>
+          <div class="curr-aula-body">
+            <strong>Estadia na descarga</strong>
+            <p>Agendamento e aviso de chegada: a distinção que mudou o jogo nos últimos anos. Linha do tempo da descarga. Provas que funcionam, provas complementares e o que não funciona jamais, nem vale tentar.</p>
+          </div>
+        </div>
+        <div class="curr-aula">
+          <span class="curr-aula-num serif">09</span>
+          <div class="curr-aula-body">
+            <strong>Cálculo, prescrição e polo passivo</strong>
+            <p>Como calcular com as três variáveis. Como provar a capacidade de peso líquido quando a mercadoria é leve. Prescrição de 5 anos pelo entendimento do STJ. Por que hoje se entra contra as três empresas ao mesmo tempo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MÓDULO 2 -->
+    <div class="curr-modulo" data-reveal>
+      <div class="curr-modulo-header">
+        <div class="curr-modulo-tag">Gravado · Do atendimento ao protocolo</div>
+        <h3 class="curr-modulo-titulo serif">Módulo 2: Da Triagem ao Processo</h3>
+        <p class="curr-modulo-desc">Saber o direito não é suficiente. Você precisa saber triar o caso, orientar o cliente certo, montar a petição sem os erros que fazem o juiz extinguir antes de analisar e saber o que fazer quando a empresa contesta. Esse módulo fecha o ciclo.</p>
+      </div>
+      <div class="curr-aulas-grid">
+        <div class="curr-aula">
+          <span class="curr-aula-num serif">10</span>
+          <div class="curr-aula-body">
+            <strong>Atendimento e triagem do caso</strong>
+            <p>O que perguntar ao cliente logo no primeiro contato, quando aceitar e quando recusar. Como orientar o motorista a produzir prova antes de precisar dela. O que o sindicato destrói que não tem mais conserto.</p>
+          </div>
+        </div>
+        <div class="curr-aula">
+          <span class="curr-aula-num serif">11</span>
+          <div class="curr-aula-body">
+            <strong>Estrutura da petição inicial</strong>
+            <p>Os erros que exterminam a inicial. A estrutura que funciona na prática, com análise do modelo real. A estratégia de antecipar os argumentos da empresa na própria inicial versus guardar para a impugnação.</p>
+          </div>
+        </div>
+        <div class="curr-aula">
+          <span class="curr-aula-num serif">12</span>
+          <div class="curr-aula-body">
+            <strong>Contestação e teses defensivas</strong>
+            <p>Análise de contestação real. As teses que as empresas sempre usam e como responder cada uma. O argumento do rastreador como prova unilateral e o que colocar na impugnação para derrubar.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LIVES -->
+    <div class="curr-jornada-label" data-reveal>
+      <span class="curr-jornada-pill">Durante os 6 meses de acesso</span>
+    </div>
+
+    <div class="curr-modulo curr-modulo-live" data-reveal>
+      <div class="curr-modulo-header">
+        <div class="curr-modulo-tag curr-modulo-tag-live">Ao vivo · Quinzenais</div>
+        <h3 class="curr-modulo-titulo serif">Lives de Casos Reais</h3>
+        <p class="curr-modulo-desc">Esse é o coração da mentoria. Você assiste as aulas gravadas, começa a atender seus clientes e traz o caso real que está travando para a live. A Letícia analisa ao vivo com você. Não repete teoria. Resolve o problema que está na sua frente.</p>
+      </div>
+      <div class="curr-live-stats" >
+        <div class="curr-live-stat">
+          <span class="curr-live-stat-num serif">5</span>
+          <div class="curr-live-stat-text">
+            <strong>Lives quinzenais</strong>
+            <p>Sem tema fixo. O que pauta cada live é o que os alunos trouxeram. Análise de sentença, procedente e improcedente, entra como tema recorrente para você aprender a ler o que o juiz valoriza.</p>
+          </div>
+        </div>
+        <div class="curr-live-stat-div"></div>
+        <div class="curr-live-stat">
+          <span class="curr-live-stat-num serif">6</span>
+          <div class="curr-live-stat-text">
+            <strong>Meses de acesso</strong>
+            <p>Tempo real para absorver o conteúdo, começar a atender e voltar com dúvida de caso real. A mentoria tem início, meio e fim porque prazo cria comprometimento.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONCLUSÃO -->
+    <div class="curr-jornada-label" data-reveal>
+      <span class="curr-jornada-pill">Quando você concluir</span>
+    </div>
+
+    <div class="curr-modulo curr-modulo-conclusao" data-reveal>
+      <div class="curr-modulo-header">
+        <div class="curr-modulo-tag">Gravado · Aula final</div>
+        <h3 class="curr-modulo-titulo serif">Encerramento e próximos passos</h3>
+        <p class="curr-modulo-desc">Terminar a mentoria não significa saber tudo. Significa saber como pensar, como analisar os documentos, como identificar o risco e como construir uma atuação responsável. Essa aula fecha o ciclo e aponta o caminho daqui pra frente.</p>
+      </div>
+      <div class="curr-aulas-grid curr-aulas-grid-2">
+        <div class="curr-aula">
+          <span class="curr-aula-num serif">13</span>
+          <div class="curr-aula-body">
+            <strong>Revisão e consolidação</strong>
+            <p>Os pontos mais sensíveis que a experiência da Letícia mostra que os advogados erram quando começam a atender sozinhos. Um alinhamento final antes de você colocar o primeiro processo no ar.</p>
+          </div>
+        </div>
+        <div class="curr-aula">
+          <span class="curr-aula-num serif">14</span>
+          <div class="curr-aula-body">
+            <strong>Agora começa de verdade</strong>
+            <p>A mentoria termina, a prática começa. Como continuar evoluindo, o que monitorar nos primeiros casos e como a Letícia construiu os primeiros anos da sua atuação nessa área.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ENTREGÁVEIS -->
+    <div class="curr-entregaveis-section" data-reveal>
+      <div class="curr-entregaveis-header">
+        <div class="eyebrow" style="margin-bottom:12px;">Tudo que você recebe junto</div>
+        <h3 class="serif" style="font-size:clamp(1.4rem,2.5vw,2rem);font-weight:300;color:var(--cream);margin-bottom:12px;">Ferramentas prontas para o<br><em>primeiro cliente</em></h3>
+        <p style="font-size:0.9rem;opacity:0.7;max-width:520px;">Você não vai sair da mentoria precisando criar do zero. Os modelos já estão prontos. É adaptar, assinar e protocolar.</p>
+      </div>
+      <div class="curr-entregaveis-grid">
+        <div class="curr-entregavel-card">
+          <div class="curr-entregavel-icon">⊏</div>
+          <strong>Modelo de petição inicial comentado</strong>
+          <p>O modelo real que o escritório usa, com comentários explicando cada escolha estratégica. Você entende o porquê de cada parágrafo.</p>
+        </div>
+        <div class="curr-entregavel-card">
+          <div class="curr-entregavel-icon">✓</div>
+          <strong>Checklist de triagem de casos</strong>
+          <p>As perguntas certas para fazer ao cliente no primeiro contato e decidir se o caso vale ou não vale aceitar antes de gastar seu tempo.</p>
+        </div>
+        <div class="curr-entregavel-card">
+          <div class="curr-entregavel-icon">◎</div>
+          <strong>Calculadora de estadia</strong>
+          <p>A ferramenta que o escritório usa todo dia. Você coloca a data de chegada, a saída e o peso, ela devolve o valor do direito do seu cliente.</p>
+        </div>
+        <div class="curr-entregavel-card">
+          <div class="curr-entregavel-icon">§</div>
+          <strong>Modelo de contrato de honorários</strong>
+          <p>O contrato que formaliza a entrada e o percentual de êxito. Com a cláusula de procuração e o padrão que o escritório usa para não ter problema depois.</p>
+        </div>
+        <div class="curr-entregavel-card">
+          <div class="curr-entregavel-icon">◈</div>
+          <strong>Modelo de procuração</strong>
+          <p>Formato que funciona para assinatura digital via Zapsign, facilitando a contratação pelo celular sem burocracia para o caminhoneiro.</p>
+        </div>
+        <div class="curr-entregavel-card">
+          <div class="curr-entregavel-icon">◉</div>
+          <strong>Guia de fóruns por estado</strong>
+          <p>Velocidade, entendimentos e o que evitar em cada tribunal. Construído com base na experiência real de processos em diferentes estados do Brasil.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA FINAL -->
+    <div class="curr-cta" data-reveal>
+      <div class="curr-cta-inner">
+        <div class="curr-cta-text">
+          <div class="eyebrow" style="margin-bottom:14px;">Pronto para começar</div>
+          <h3 class="serif" style="font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:300;color:var(--cream);line-height:1.15;margin-bottom:20px;">Um único processo bem conduzido<br>já paga o investimento.</h3>
+          <p style="font-size:0.95rem;opacity:0.75;line-height:1.75;max-width:500px;">A mentoria é para quem quer entrar nessa área com segurança, sem ficar tentando aprender sozinho no processo do cliente. Vagas são limitadas porque o acompanhamento é ao vivo.</p>
+        </div>
+        <div class="curr-cta-box">
+          <div class="curr-cta-preco-label">Investimento</div>
+          <div class="curr-cta-preco serif">R$ 5.000</div>
+          <div class="curr-cta-ou">ou</div>
+          <div class="curr-cta-preco-parcelado serif">R$ 6.000 <span>em 4x</span></div>
+          <div class="curr-cta-btn">Quero fazer parte</div>
+          <p class="curr-cta-note">Formalização via contrato. Vagas limitadas por turma.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
 <!-- FOOTER -->
 <footer>
